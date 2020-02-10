@@ -2,11 +2,14 @@
 import * as React from "react";
 import {Section} from "../Section/Section";
 import type {ThemeProps} from "../../contexts/types";
-import type {ScreenProps} from "../types";
 import {withTheme} from "../../contexts/ThemeContext";
 
+type BaseProps = {
+    screenHeight: number,
+};
+
 type Props = {
-    ...ScreenProps,
+    ...BaseProps,
     ...ThemeProps,
 };
 
@@ -24,4 +27,4 @@ class HeaderBase extends React.PureComponent<Props> {
     }
 }
 
-export const Header = withTheme(HeaderBase);
+export const Header = withTheme<BaseProps>(HeaderBase);

@@ -33,7 +33,7 @@ class MainScreen extends React.Component<{}, State> {
         Dimensions.removeEventListener("change", this.handleDimensionsChange);
     }
 
-    handleDimensionsChange = ({screen}) => {
+    handleDimensionsChange = ({screen}: {screen: {height: number, width: number}}) => {
         this.setState({
             isNarrowScreen: isNarrowScreen(screen),
             screenHeight: getScreenHeight(screen),

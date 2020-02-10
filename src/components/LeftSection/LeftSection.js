@@ -6,8 +6,11 @@ import type {ThemeProps} from "../../contexts/types";
 import type {ScreenProps} from "../types";
 import {withTheme} from "../../contexts/ThemeContext";
 
-type Props = {
+type BaseProps = {
     ...ScreenProps,
+};
+type Props = {
+    ...BaseProps,
     ...ThemeProps,
 };
 
@@ -29,4 +32,4 @@ class LeftSectionBase extends React.PureComponent<Props> {
     }
 }
 
-export const LeftSection = withTheme(LeftSectionBase);
+export const LeftSection = withTheme<BaseProps>(LeftSectionBase);

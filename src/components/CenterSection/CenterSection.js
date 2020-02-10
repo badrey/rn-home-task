@@ -5,8 +5,12 @@ import {withTheme} from "../../contexts/ThemeContext";
 import type {ThemeProps} from "../../contexts/types";
 import type {ScreenProps} from "../types";
 
-type Props = {
+type BaseProps = {
     ...ScreenProps,
+};
+
+type Props = {
+    ...BaseProps,
     ...ThemeProps,
 };
 
@@ -26,4 +30,4 @@ class CenterSectionBase extends React.PureComponent<Props> {
     }
 }
 
-export const CenterSection = withTheme(CenterSectionBase);
+export const CenterSection = withTheme<BaseProps>(CenterSectionBase);

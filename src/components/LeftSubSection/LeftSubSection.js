@@ -13,9 +13,7 @@ export class LeftSubSection extends React.PureComponent<Props> {
 
         return (
             <View style={styles.container}>
-                <View style={[styles.subContainer, {backgroundColor}]}>
-                    {this.props.children}
-                </View>
+                <View style={[styles.subContainer, {backgroundColor}]} />
             </View>
         );
     }
