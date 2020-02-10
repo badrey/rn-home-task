@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "expo": "~36.0.0",
-    "prettier": "1.19.1",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
@@ -18,7 +17,9 @@
   "devDependencies": {
     "babel-preset-expo": "~8.0.0",
     "@babel/core": "^7.0.0",
-    "flow-bin": "^0.108.0"
+    "flow-bin": "^0.108.0",
+    "flow-typed": "2.6.2",
+    "prettier": "1.19.1"
   },
   "private": true
 }
