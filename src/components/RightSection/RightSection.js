@@ -2,8 +2,16 @@
 import * as React from "react";
 import {Section} from "../Section/Section";
 
-export class RightSection extends React.PureComponent<{}> {
+type Props = {
+    isNarrowScreen: boolean,
+    screenHeight: number,
+};
+
+export class RightSection extends React.PureComponent<Props> {
     render() {
-        return <Section height={"100%"} width={"20%"} backgroundColor={"#F5D26A"} />;
+        const {isNarrowScreen, screenHeight} = this.props;
+        const height = isNarrowScreen ? screenHeight * 0.6 : "100%";
+        const width = isNarrowScreen ? "100%" : "20%";
+        return <Section height={height} width={width} backgroundColor={"#F5D26A"} />;
     }
 }

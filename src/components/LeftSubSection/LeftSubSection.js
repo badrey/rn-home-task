@@ -1,18 +1,21 @@
 /* @flow */
 import * as React from "react";
-import {Section} from "../Section/Section";
+import {styles} from "./styles";
+import {View} from "react-native";
 
 type Props = {
     backgroundColor: string,
 };
 
-class LeftSubSection extends React.PureComponent<Props> {
+export class LeftSubSection extends React.PureComponent<Props> {
     render() {
         const {backgroundColor} = this.props;
         return (
-            <Section height={"50%"} width={"100%"} backgroundColor={backgroundColor} />
+            <View style={styles.container}>
+                <View style={[styles.subContainer, {backgroundColor}]}>
+                    {this.props.children}
+                </View>
+            </View>
         );
     }
 }
-
-export {LeftSubSection};

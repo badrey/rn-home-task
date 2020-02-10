@@ -7,11 +7,9 @@ import type {SectionProps} from "./types";
 export class Section extends React.PureComponent<SectionProps> {
     render() {
         const {backgroundColor, height, width} = this.props;
-        const containerCustomStyle = {height, width};
-        const subContainerCustomStyles = {backgroundColor};
         return (
-            <View style={[styles.container, containerCustomStyle]}>
-                <View style={[styles.subContainer, subContainerCustomStyles]}>
+            <View style={[styles.container, {height, width}]}>
+                <View style={[styles.subContainer, {backgroundColor}]}>
                     {this.props.children}
                 </View>
             </View>

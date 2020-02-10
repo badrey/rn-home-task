@@ -2,8 +2,19 @@
 import * as React from "react";
 import {Section} from "../Section/Section";
 
-export class Header extends React.PureComponent<{}> {
+type Props = {
+    screenHeight: number,
+};
+
+export class Header extends React.PureComponent<Props> {
     render() {
-        return <Section height={"10%"} width={"100%"} backgroundColor={"#505A26"} />;
+        const {screenHeight} = this.props;
+        return (
+            <Section
+                height={screenHeight * 0.1}
+                width={"100%"}
+                backgroundColor={"#505A26"}
+            />
+        );
     }
 }

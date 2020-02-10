@@ -3,11 +3,8 @@ import {StyleSheet} from "react-native";
 
 export const styles = StyleSheet.create({
     container: {
+        flex: 1,
         backgroundColor: "white",
-        flex: 1,
     },
-    mainSectionContainer: {
-        flexDirection: "row",
-        flex: 1,
-    },
+    contentContainer: {},
 });
