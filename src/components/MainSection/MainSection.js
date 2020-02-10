@@ -5,15 +5,16 @@ import {LeftSection} from "../LeftSection/LeftSection";
 import {CenterSection} from "../CenterSection/CenterSection";
 import {RightSection} from "../RightSection/RightSection";
 import {styles} from "./styles";
+import type {ScreenProps} from "../types";
 
 type Props = {
-    isNarrowScreen: boolean,
-    screenHeight: number,
+    ...ScreenProps,
 };
 
 export class MainSection extends React.PureComponent<Props> {
     render() {
         const {isNarrowScreen, screenHeight} = this.props;
+
         if (isNarrowScreen) {
             return (
                 <View style={styles.narrowContainer}>

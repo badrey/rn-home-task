@@ -1,20 +1,27 @@
 /* @flow */
 import * as React from "react";
 import {Section} from "../Section/Section";
+import type {ThemeProps} from "../../contexts/types";
+import type {ScreenProps} from "../types";
+import {withTheme} from "../../contexts/ThemeContext";
 
 type Props = {
-    screenHeight: number,
+    ...ScreenProps,
+    ...ThemeProps,
 };
 
-export class Header extends React.PureComponent<Props> {
+class HeaderBase extends React.PureComponent<Props> {
     render() {
-        const {screenHeight} = this.props;
+        const {screenHeight, theme} = this.props;
+
         return (
             <Section
                 height={screenHeight * 0.1}
                 width={"100%"}
-                backgroundColor={"#505A26"}
+                backgroundColor={theme.headerColor}
             />
         );
     }
 }
+
+export const Header = withTheme(HeaderBase);

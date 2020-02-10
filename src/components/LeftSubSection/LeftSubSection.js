@@ -10,6 +10,7 @@ type Props = {
 export class LeftSubSection extends React.PureComponent<Props> {
     render() {
         const {backgroundColor} = this.props;
+
         return (
             <View style={styles.container}>
                 <View style={[styles.subContainer, {backgroundColor}]}>
